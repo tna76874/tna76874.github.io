@@ -1,0 +1,1 @@
+window.MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],packages:{'[+]':['mhchem']}},loader:{load:['[tex]/mhchem','[tex]/cancel','[tex]/color']},};

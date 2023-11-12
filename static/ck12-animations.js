@@ -1,0 +1,2 @@
+var animation=document.getElementById('CK12');if(typeof animation!="undefined"&&animation!==null){var noConsentElement=document.getElementById('no-consent-ck12');if(noConsentElement!==null&&typeof(noConsentElement)!='undefined'){noConsentElement.style.display="none";}
+animation.setAttribute("src",animation.getAttribute('data-src'));}

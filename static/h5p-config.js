@@ -1,0 +1,7 @@
+(function($){'use strict';Drupal.behaviors.customH5P={attach:function(context){H5P.externalDispatcher.on('xAPI',function(event){if(event.data.statement.result){if(event.data.statement.object.definition.extensions){let iframe_id=event.data.statement.object.definition.extensions['http://h5p.org/x-api/h5p-local-content-id'];let iframe_content=$("#h5p-iframe-"+iframe_id).contents().find('body');let checkExist=setInterval(function(){let feedback_text=iframe_content.find('.feedback-text');if(feedback_text.length>0){if(event.data.statement.result.score.scaled){let result=event.data.statement.result.score.scaled;let result_text='';if(result==1){result_text='Super! Alles richtig.';}
+else if(result>0.9&&result<=0.99){result_text='Sehr gut, schon fast alles richtig.';}
+else if(result>0.7&&result<=0.9){result_text='Gut gemacht, schon über 70% richtig.';}
+else if(result>0.5&&result<=0.7){result_text='Schon mehr als die Hälfte richtig, aber noch nicht perfekt.';}
+else if(result>0.25&&result<=0.5){result_text='Du kannst dich noch steigern.';}
+else if(result>=0&&result<=0.25){result_text='Hey, dass kannst du doch besser.';}
+feedback_text.html(result_text);clearInterval(checkExist);}}},10);}}});}};})(jQuery);
